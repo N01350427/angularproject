@@ -1,0 +1,34 @@
+<div *ngIf="items.length>=1" class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Cart</h5>
+
+      <table *ngFor="let item of items" class="table">
+        <tbody>
+          <tr>
+            <td>{{item.productName}}</td>
+          </tr>
+          <tr>
+            <th>Price:&nbsp;{{item.price}}</th>
+          </tr>
+          <tr>
+            <td>Discount:&nbsp;{{item.discountPrice}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-card>
+
+        <mat-card-actions>
+          <p *ngIf="total !=0" class="card-text"> Grand Total: {{ total | currency }} </p>
+
+          <button routerLink='/checkout' (click)="confirm()" mat-raised-button color="primary">Checkout</button>
+          <button (click)="clear()" mat-raised-button color="warn">Clear</button>
+
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+	<mat-card class="main">
+		<form (ngSubmit)="login()" class="mb-3">
+			<!--Email Field-->
+
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input type="text" class="form-control" [(ngModel)]="user.username" name="email"
+					placeholder="email@email.com" required email />
+
+			</div>
+
+			<!--Password Field-->
+			<div class="mb-3">
+				<label for="password" class="form-label">Password</label>
+				<input type="password" class="form-control" [(ngModel)]="user.password" name="password"
+					placeholder="******" />
+			</div>
+
+			<mat-card-actions class="buttons" style="text-align: center;">
+                <button mat-raised-button type="submit" color="primary">LOGIN</button>
+            </mat-card-actions>
+
+		</form>
+	</mat-card>
+</div>
